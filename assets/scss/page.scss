@@ -1,0 +1,197 @@
+@use 'global';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: global.$color-darken;
+}
+
+.header {
+    border-width: 1px;
+    border-color: global.$color-primary;
+    
+    a {
+        text-decoration: none;
+    }
+
+    h6 {
+        @include global.font-sm;
+        color: global.$color-primary;
+        margin: 2vh 6vw 2vh 2vw;
+
+        &:hover {
+            opacity: 0.8;
+            transition: opacity .5s ease-out;
+        }
+    }
+}
+
+.load-logo {
+    width: 12vw;
+    margin: 2vh 2vw 2vh 6vw;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 60px;
+
+    .presentation {
+        padding: 10px;
+        flex: 1;
+
+        h1 {
+            @include global.font-xxl;
+            color: global.$color-white;
+            margin: 6vh 0;
+        }
+
+        p {
+            @include global.font-md;
+            color: global.$color-gray-darken;
+            margin: 6vh 0;
+            
+            span {
+                @include global.font-md-under;
+
+                &:hover {
+                    opacity: 0.8;
+                    transition: opacity .5s ease-out;
+                }
+            }
+        }
+    }
+
+    .presentation-imgs {
+        flex: 1;
+        position: relative;
+
+        img {
+            position: absolute;
+            // overflow: visible;
+        }
+
+        .circle {
+            width: 24vh;
+            height: 24vh;
+            right: 34%;
+            bottom: 0%;
+            animation: 5s ease-out 0s 1 circle-animation;
+        }
+
+        .desktop {
+            width: 42vh;
+            height: 42vh;
+            right: 25%;
+            top: 0%;
+            animation: 3s ease-out 0s 1 desktop-animation;
+        }
+
+        .square {
+            width: 15vh;
+            height: 15vh;
+            top: 10%;
+            left: 5%;
+            animation: 3s ease-out 0s 1 square-animation;
+        }
+
+        .letters {
+            width: 16vh;
+            height: 16vh;
+            top: 44%;
+            left: 30%;
+            animation: 12s ease-out 0s 1 letters-animation;
+        }
+
+        .sketch {
+            width: 70vh;
+            height: 70vh;
+            animation: 9s ease-out 0s 1 sketch-animation;
+        }
+
+        .cellphone {
+            width: 40vh;
+            height: 50vh;
+            // left: 2%;
+            bottom: 0%;
+            animation: 1s ease-out 0s 1 cellphone-animation;
+        }
+    }
+}
+
+@keyframes cellphone-animation {
+    0% {
+      left: 20%;
+      opacity: 0.5;
+    }
+    100% {
+        left: 2%;
+        opacity: 1;
+    }
+}
+
+@keyframes square-animation {
+    0% {
+        top: 20%;
+        left: 15%;
+        opacity: 0.5;
+    }
+    100% {
+        top: 10%;
+        left: 5%;
+        opacity: 1;
+    }
+}
+
+@keyframes sketch-animation {
+    0% {
+        width: 50vh;
+        height: 50vh;
+        rotate: 30deg;
+        opacity: 0.5;
+    }
+    100% {
+        width: 70vh;
+        height: 70vh;
+        rotate: 0deg;
+        opacity: 1;
+    }
+}
+
+@keyframes letters-animation {
+    0% {
+      rotate: 45deg;
+      opacity: 0.5;
+    }
+    100% {
+        rotate: 0deg;
+        opacity: 1;
+    }
+}
+
+@keyframes circle-animation {
+    0% {
+      opacity: 0.5;
+      right: 40%;
+      bottom: 40%;
+    }
+    100% {
+        opacity: 1;
+        right: 34%;
+        bottom: 0%;
+    }
+}
+
+@keyframes desktop-animation {
+    0% {
+      opacity: 0.5;
+    //   right: 34%;
+      top: 20%;
+    }
+    100% {
+        opacity: 1;
+        // right: 34%;
+        top: 0%;
+    }
+}

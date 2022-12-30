@@ -1,0 +1,40 @@
+$color-primary: #0066FF;
+$color-primary-darken: #0052CC;
+$color-gray-lighten: #CEDAE3;
+$color-gray-darken: #8FAABF;
+$color-darken: #0B1727;
+$color-white: #FFFFFF;
+
+@mixin font-base {
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+@mixin font-xxl {
+    @include font-base;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 115.5%;
+}
+
+@mixin font-md {
+    @include font-base;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+@mixin font-md-under {
+    @include font-base;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration-line: underline;
+}
+
+@mixin font-sm {
+    @include font-base;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
